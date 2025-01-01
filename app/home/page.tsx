@@ -9,7 +9,7 @@ export default function Home() {
         fontWeight: "bold",
       }}
     >
-      主页方案待定
+      主页
     </div>
   );
 }

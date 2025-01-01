@@ -1,0 +1,19 @@
+.footer {
+  height: 70px;
+  width: 100%;
+  background: #7ac4f3;
+
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  .copyright {
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+  }
+
+  .email {
+    flex-grow: 1;
+  }
+}
