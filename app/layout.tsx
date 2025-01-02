@@ -15,6 +15,7 @@ export default function RootLayout({
     <html lang="zh">
       <body>
         {/* layout布局 */}
+        <h3>这是根layout</h3>
         <div id="root">{children}</div>
       </body>
     </html>

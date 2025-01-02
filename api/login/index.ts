@@ -10,3 +10,10 @@ export async function InsertUser(formData: FormData) {
   // Insert the comment from the form into the Postgres database
   await sql("INSERT INTO users (username, ) VALUES ($1)", [comment]);
 }
+
+export async function GetUsers() {
+  const sql = neon(`${process.env.DATABASE_URL}`);
+  return await sql`SELECT * FROM comments`;
+}
+
+GetUsers();
