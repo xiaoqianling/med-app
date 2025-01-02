@@ -1,27 +1,33 @@
-'use client'
-import { GetUsers } from "@/api/login";
+"use client";
 import Link from "next/link";
+import Layout from "./(layout)/layout";
 import { useEffect } from "react";
+import { login } from "@/api/users";
 
 export default function Home() {
   useEffect(() => {
-    // GetUsers().then((res) => {
-    //   console.log(res);
-    // }); 
-  })
+    console.log(process.env);
+
+    login({
+      username: "qianling",
+      password: "123456",
+    });
+  });
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: "30px",
-        fontWeight: "bold",
-      }}
-    >
-      主页方案待定
-      <Link href="/login"><span style={{color: "green"}}>login</span></Link>
-    </div>
+    <Layout>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "30px",
+          fontWeight: "bold",
+        }}
+      >
+        主页
+        <Link href={"/login"}>前往登录页</Link>
+      </div>
+    </Layout>
   );
 }
