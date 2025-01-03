@@ -10,11 +10,11 @@ function LoginPage() {
   const [password, setPassword] = useState<string>('');
 
   const handleLogin = () => {
-    router.push("/home");
+    router.push("/");
   };
 
   const handleRegister = () => {
-    router.push("/register");
+    router.push("/");
   };
 
   return (

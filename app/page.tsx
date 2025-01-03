@@ -10,7 +10,7 @@ export default function Home() {
 
     login({
       username: "qianling",
-      password: "123456",
+      password: "123456"
     });
   });
 
@@ -22,7 +22,7 @@ export default function Home() {
           justifyContent: "center",
           alignItems: "center",
           fontSize: "30px",
-          fontWeight: "bold",
+          fontWeight: "bold"
         }}
       >
         主页
