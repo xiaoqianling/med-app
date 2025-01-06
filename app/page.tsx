@@ -1,17 +1,12 @@
 "use client";
 import Link from "next/link";
 import Layout from "./(layout)/layout";
-import { useEffect } from "react";
-import { login } from "@/api/users";
+import { testCs } from "@/api/users/cs";
 
 export default function Home() {
-  useEffect(() => {
-    console.log(process.env);
-
-    login({
-      username: "qianling",
-      password: "123456"
-    });
+  console.log(process.env.DATABASE_URL);
+  testCs().then((res) => {
+    console.log(res);
   });
 
   return (
