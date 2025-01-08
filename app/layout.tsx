@@ -1,6 +1,5 @@
 import "./index.scss";
 import { Metadata } from "next";
-// antd v5 适配 react 19
 
 export default function RootLayout({
   children
@@ -17,6 +16,6 @@ export default function RootLayout({
 }
 
 export const metadata: Metadata = {
-  title: "海天数字医疗",
+  title: "痛风患者健康管理系统",
   description: "数字医疗系统 TODO: 补充描述"
 };

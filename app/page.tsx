@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Layout from "./(layout)/layout";
 import { testCs } from "@/api/users/cs";
+import Cards from "@/components/cards/cards";
 
 export default function Home() {
   console.log(process.env.DATABASE_URL);
@@ -17,11 +18,12 @@ export default function Home() {
           justifyContent: "center",
           alignItems: "center",
           fontSize: "30px",
-          fontWeight: "bold"
+          fontWeight: "bold",
+          width: "100%",
+          height: "100%"
         }}
       >
-        主页
-        <Link href={"/login"}>前往登录页</Link>
+        <Cards />
       </div>
     </Layout>
   );

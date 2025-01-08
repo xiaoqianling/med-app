@@ -1,13 +1,18 @@
 import "./index.scss";
 import Power from "../icons/power";
+import localAvatar from "./next.svg";
+import Image from "next/image";
+import { Input } from "antd";
 
 function Header() {
   return (
     <div className="header_container">
-      <div className="logo">这里是logo</div>
-      <div className="weather">这里是天气</div>
+      <div className="logo">
+        <Image src={localAvatar} alt="头像" width={100} height={100} />
+      </div>
+      <div className="weather">🌞 晴</div>
       <div className="search">
-        <input type="text" placeholder="搜索框" />
+        <Input.Search />
       </div>
       <div className="message">
         <div className="mes">消息</div>

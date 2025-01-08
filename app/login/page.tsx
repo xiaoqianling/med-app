@@ -12,7 +12,7 @@ function LoginPage() {
   const [password, setPassword] = useState<string>("");
   const [messageApi, contextHolder] = message.useMessage();
 
-  const handleLogin = (form: FormData) => {
+  const handleSubmit = (form: FormData) => {
     const result = verifyLoginForm(form);
     console.log("🌟 [REI] ~  handleLogin [REI] ~  result:", result);
     switch (result) {
@@ -45,13 +45,17 @@ function LoginPage() {
     });
   };
 
+  const handleLogin = () => {
+    router.push("/");
+  };
+
   const handleRegister = () => {
     // router.push("/");
   };
 
   return (
     <div className="login_container">
-      <Form action={handleLogin}>
+      {/* <Form action={handleLogin}>
         <Form.Item label="账号">
           <Input />
         </Form.Item>
@@ -62,10 +66,10 @@ function LoginPage() {
           登录
         </Button>
         <Button onClick={handleRegister}>注册</Button>
-      </Form>
+      </Form> */}
       {/* TODO: 更强大的表单 数据验证 */}
       {contextHolder}
-      {/* <div className="login-box">
+      <div className="login-box">
         <h2>Login</h2>
         <div className="input-box">
           <label>账号</label>
@@ -98,7 +102,7 @@ function LoginPage() {
             <button onClick={handleRegister}>注册</button>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

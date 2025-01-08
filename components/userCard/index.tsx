@@ -1,7 +1,9 @@
 import { FunctionComponent } from "react";
-import { DepartmentEnum, UserRoleEnum } from "./type";
+import { DepartmentEnum, DepartmentMap, UserRoleEnum, UserRoleMap } from "./type";
 import Image from "next/image";
-import localAvatar from "./avatar.jpeg";
+import localAvatar from "./avatar.svg";
+import "./index.scss";
+import Link from "next/link";
 
 interface UserCardProps {
   avatar?: string;
@@ -13,11 +15,13 @@ interface UserCardProps {
 const UserCard: FunctionComponent<UserCardProps> = ({ avatar, name, role, department }) => {
   return (
     <div className="user_card_container">
-      <Image src={avatar ?? localAvatar} alt="头像" width={100} height={100} />
+      <Link href={"/login"}>
+        <Image src={avatar ?? localAvatar} alt="头像" width={60} height={60} onClick={() => {}} />
+      </Link>
       <span>{name}</span>
-      <div>
-        <span>{role}</span>
-        <span>{department}</span>
+      <div className="info">
+        <span>{UserRoleMap[role]}</span>
+        <span>{DepartmentMap[department]}</span>
       </div>
     </div>
   );
