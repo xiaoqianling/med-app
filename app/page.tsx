@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Layout from "./(layout)/layout";
 import { testCs } from "@/api/users/cs";
 import Cards from "@/components/cards/cards";

@@ -16,7 +16,7 @@ const UserCard: FunctionComponent<UserCardProps> = ({ avatar, name, role, depart
   return (
     <div className="user_card_container">
       <Link href={"/login"}>
-        <Image src={avatar ?? localAvatar} alt="头像" width={60} height={60} onClick={() => {}} />
+        <Image src={avatar ?? localAvatar} alt="头像" width={60} height={60} />
       </Link>
       <span>{name}</span>
       <div className="info">

@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import "./index.scss";
 import Link from "next/link";
 import { useState } from "react";
-import { Button, Form, Input, message } from "antd";
+import { message } from "antd";
 import { LoginResult, verifyLoginForm } from "./util";
 
 function LoginPage() {
@@ -12,6 +12,7 @@ function LoginPage() {
   const [password, setPassword] = useState<string>("");
   const [messageApi, contextHolder] = message.useMessage();
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleSubmit = (form: FormData) => {
     const result = verifyLoginForm(form);
     console.log("🌟 [REI] ~  handleLogin [REI] ~  result:", result);

@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  QuestionCircleOutlined,
-  SettingOutlined,
-  ToolFilled,
-  UserAddOutlined
-} from "@ant-design/icons";
+import { QuestionCircleOutlined, SettingOutlined, ToolFilled, UserAddOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 
