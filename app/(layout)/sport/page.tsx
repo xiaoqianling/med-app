@@ -1,5 +1,5 @@
 import SportCard, { SportCardMetaInfo } from "@/components/sportCard";
-import { Blockquote, Button, Stack, Text } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 const sportRecord: SportCardMetaInfo[] = [
   {
