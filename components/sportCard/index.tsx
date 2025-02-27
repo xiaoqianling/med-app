@@ -12,13 +12,11 @@ interface SportCardProps {
 
 const SportCard: FunctionComponent<SportCardProps> = ({ info, className, onDetailClick, onPunchClick }) => {
   const mapInfo = (item: SportCardMetaInfo, index: number) => {
+    console.log(item.cardColor);
     return (
       <div key={index} className="w-80 relative">
         {/* 背景右下偏移 不影响主内容定位(背景脱离文档流) */}
-        <div
-          className={`absolute left-4 top-10 w-full h-72 z-[-1]`}
-          style={{ backgroundColor: item.cardColor }}
-        >
+        <div className={`absolute left-4 top-10 w-full h-72`} style={{ backgroundColor: item.cardColor }}>
           {/* 标签 */}
           <span className="absolute bottom-1 left-2 text-white">→ 减脂健身</span>
         </div>
