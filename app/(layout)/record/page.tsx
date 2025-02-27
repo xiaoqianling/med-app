@@ -29,6 +29,7 @@ function RecordPage() {
   const [selection, setSelection] = useState<number[]>([]);
 
   const hasSelection = selection.length > 0;
+  // true: 选择了一部分 false: 选择了全部或者没有选择
   const indeterminate = hasSelection && selection.length < mockRecordTableItems.length;
 
   const handleAccountChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
@@ -45,6 +46,19 @@ function RecordPage() {
         return [...prev, index];
       }
     });
+  };
+  const handleClickAllCheck = () => {
+    // 三态
+    if (indeterminate) {
+      // 选择了一部分 行为：全选
+      setSelection(mockRecordTableItems.map((item, index) => index));
+    } else {
+      if (hasSelection) {
+        setSelection([]);
+      } else {
+        setSelection(mockRecordTableItems.map((item, index) => index));
+      }
+    }
   };
 
   const rows = mockRecordTableItems.map((item, index) => {
@@ -133,7 +147,10 @@ function RecordPage() {
           <Table.Header>
             <Table.Row>
               <Table.ColumnHeader w="6" textAlign={"center"}>
-                <Checkbox />
+                <Checkbox
+                  onClick={handleClickAllCheck}
+                  checked={selection.length === mockRecordTableItems.length}
+                />
               </Table.ColumnHeader>
               <Table.ColumnHeader textAlign={"center"} className="font-bold">
                 账号
@@ -197,7 +214,7 @@ function RecordPage() {
             ))}
           </SelectContent>
         </SelectRoot>
-        <PaginationRoot count={20} pageSize={2} page={1} onPageChange={(e) => {}}>
+        <PaginationRoot count={20} pageSize={2} page={1} onPageChange={() => {}}>
           <HStack>
             <PaginationPrevTrigger />
             <PaginationItem type="page" value={1} />
