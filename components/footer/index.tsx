@@ -4,8 +4,8 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="name"></div>
-      <div className="copyright">...公司 版权所有 @千灵REI</div>
-      <div className="email">联系邮箱：xiaoqianling@qq.com</div>
+      <div className="copyright">@千灵rei</div>
+      <div className="email">反馈：xiaoqianling@qq.com</div>
     </footer>
   );
 }

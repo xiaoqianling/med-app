@@ -6,7 +6,7 @@ import { Input } from "antd";
 
 function Header() {
   return (
-    <div className="header_container">
+    <div className="header_container py-2">
       <div className="logo">
         <Image src={localAvatar} alt="头像" width={100} height={100} />
       </div>

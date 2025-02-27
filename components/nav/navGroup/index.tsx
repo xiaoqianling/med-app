@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import { QuestionCircleOutlined, SettingOutlined, ToolFilled, UserAddOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
+import { useRouter } from "next/navigation";
+import { routeMap } from "./constant";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -35,7 +38,10 @@ const items: MenuItem[] = [
     label: "工具",
     icon: <ToolFilled />,
     children: [
-      { key: "5", label: "Option 5" },
+      {
+        key: "sport",
+        label: "运动记录"
+      },
       { key: "6", label: "Option 6" },
       {
         key: "sub3",
@@ -70,8 +76,14 @@ const items: MenuItem[] = [
 ];
 
 const NavGroup: React.FC = () => {
+  const router = useRouter();
+
+  // 导航跳转
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
+    if (routeMap[e.key]) {
+      router.push(routeMap[e.key]);
+    }
   };
 
   return (

@@ -1,35 +1,44 @@
 import React from "react";
 import { Card } from "antd";
-import { UserAddOutlined } from "@ant-design/icons";
+import { cardsMetaInfo } from "./constant";
+import { useRouter } from "next/navigation";
 
 const { Meta } = Card;
 
 const Cards: React.FC = () => {
-  const card = (
-    <Card
-      hoverable
-      style={{ width: 240 }}
-      cover={
-        <div style={{ height: "50px", display: "flex", justifyContent: "center" }}>
-          <UserAddOutlined style={{ fontSize: "40px" }} />
-        </div>
-      }
-    >
-      <Meta title="用户管理" description="一段描述" style={{ textAlign: "center" }} />
-    </Card>
-  );
-
+  const router = useRouter();
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: "20px", width: "100%" }}>
-      {card}
-      {card}
-      {card}
-      {card}
-      {card}
-      {card}
-      {card}
-      {card}
-      {card}
+      {cardsMetaInfo.map((item, index) => {
+        return (
+          <Card
+            onClick={() => {
+              if (item.link.startsWith("http")) {
+                window.open(item.link, "_blank");
+              } else {
+                router.push(item.link);
+              }
+            }}
+            key={index}
+            hoverable
+            style={{ width: 240, margin: "0 auto" }}
+            cover={
+              <div
+                style={{
+                  height: "50px",
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "10px"
+                }}
+              >
+                {item.icon}
+              </div>
+            }
+          >
+            <Meta title={item.title} description={item.desc} style={{ textAlign: "center" }} />
+          </Card>
+        );
+      })}
     </div>
   );
 };
